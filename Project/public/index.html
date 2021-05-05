@@ -1,0 +1,43 @@
+<!-- THIS CODE IS HEAVILY BORROWED FROM: https://github.com/knightsamar/cs340_sample_nodejs_app -->
+<html>
+<head>
+    <title> Historical Figure Search </title>
+    <link rel="stylesheet" href="main.css" />
+    <script type = "text/javascript">  
+        searchFigure() {   
+            alert("this works!");  
+         }  
+</script>  
+</head>
+<body>
+    <h1>Historical Figure Search</h1>
+    <div class="topnav">
+        <a href='/'>
+            Home
+        </a>
+
+    </div>
+    <form id="searchFigure"  method="post"><!-- action="/search" -->
+        <div>
+            First Name.
+            <input type="text" name="fname"/>
+            Last Name.
+            <input type="text" name="lname"/>
+
+            <input type="submit" id="searchFigure">
+
+        </div>
+    </form>
+
+    <table class="searchResults">
+        <tr>
+            <th>People</th>
+            <th>Events</th>
+        </tr>
+    </table>
+
+        
+
+    <!-- <p><a href='https://github.com/knightsamar/CS340-Sample-Web-App/'>Referenced Code</a></p> -->
+</body>
+</html>

@@ -1,0 +1,39 @@
+<html>
+<body>
+
+    <div>
+        <h3> Add new customer </h3>
+        <form id="addCustomer" action="/customers" method="post">
+            First name: <input type="text" name="cFirstName"><br>
+            Last name: <input type="text" name="cLastName"><br>
+            Phone: <input type="number" name="cPhone"><br>
+            <input type="submit" value="Submit">
+        </form>
+    </div>
+    <br />
+    <h3> Current Customers </h3>
+    <table>
+        <thead>
+            <tr>
+                <th>First Name</th>
+                <th>Last Name</th>
+                <th>Phone</th>
+            </tr>
+        </thead>
+        <tbody>
+            {{#each customers}}
+            <tr>
+                <td>{{cFirstName}}</td>
+                <td>{{cLastName}}</td>
+                <td>{{cPhone}}</td>
+                <td><button onclick="deleteCustomer({{customerID}})">Delete</button></td>
+                <td><a href="/customers/{{customerID}}">Edit</a></td>
+
+            </tr>
+
+            {{/each}}
+
+        </tbody>
+    </table>
+</body>
+</html>
