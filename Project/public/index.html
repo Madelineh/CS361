@@ -1,43 +1,77 @@
-<!-- THIS CODE IS HEAVILY BORROWED FROM: https://github.com/knightsamar/cs340_sample_nodejs_app -->
+<!doctype html>
 <html>
 <head>
-    <title> Historical Figure Search </title>
-    <link rel="stylesheet" href="main.css" />
-    <script type = "text/javascript">  
-        searchFigure() {   
-            alert("this works!");  
-         }  
-</script>  
+<link rel="stylesheet" href="main.css">
+    
 </head>
 <body>
-    <h1>Historical Figure Search</h1>
-    <div class="topnav">
-        <a href='/'>
-            Home
-        </a>
 
-    </div>
-    <form id="searchFigure"  method="post"><!-- action="/search" -->
+<h1>Search For A Historical Feature:</h1>
+<h2>This is index.html page</h2>
+
+     <form ><!-- id="search-figure"  method="post" action="/" -->
         <div>
-            First Name.
-            <input type="text" name="fname"/>
-            Last Name.
-            <input type="text" name="lname"/>
+            <label>First Name<input type="text" name="fname" class ="fname"/></label>
+            <label>Last Name<input type="text" name="lname" class ="lname"/></label>
 
-            <input type="submit" id="searchFigure">
+            <button type="button" onclick="scrapeProduct(fname,lname)" >Submit</button> <!-- onclick="scrapeProduct(fname, lname)" -->
 
         </div>
-    </form>
 
-    <table class="searchResults">
-        <tr>
-            <th>People</th>
-            <th>Events</th>
-        </tr>
-    </table>
+
+
+    <div class="results">
+        <p id="mm_image"></p>
+        <p id="mm_bio" ></span>
+        <p id="mm_contents" ></p>
+        <p id="functest" ></p>
+    </div>
 
         
+        <script src="/scraper.js"></script>
+        <script>
+        // const puppeteer = require('puppeteer');
 
-    <!-- <p><a href='https://github.com/knightsamar/CS340-Sample-Web-App/'>Referenced Code</a></p> -->
-</body>
-</html>
+        // function test(first, last){
+    
+        //     document.getElementById("functest").innerHTML="It works, " + first + last;
+        // }
+
+        // function scrapeProduct(first, last){
+        //     const puppeteer = require('puppeteer');
+
+        //     const browser = await puppeteer.launch();
+        //     const page = await browser.newPage();
+        //     const url = "https://en.wikipedia.org/wiki/Mark_Selby" + first + "_" + last;
+        //     await page.goto(url);
+
+        //     const [el] = await page.$x('//*[@id="mw-content-text"]/div[1]/table/tbody/tr[2]/td/a/img');
+        //     const src = await el.getProperty('src');
+        //     const srcTxt = await src.jsonValue();
+
+        //     const [el2] = await page.$x('//*[@id="mw-content-text"]/div[1]/p[3]');
+        //     const txt = await el2.getProperty('textContent');
+        //     const rawTxt = await txt.jsonValue();
+
+        //     const [el3] = await page.$x('//*[@id="toc"]/ul');
+        //     const txt2 = await el3.getProperty('textContent');
+        //     const contents = await txt2.jsonValue();
+
+        //     var test="This works!";
+
+        //     // console.log({srcTxt, rawTxt, contents});
+        //     document.getElementById("mm_image").innerHTML=srcTxt;
+        //     document.getElementById("mm_bio").innerHTML=rawTxt;
+        //     document.getElementById("mm_contents").innerHTML=contents;
+
+        //     document.getElementById("functest").innerHTML=test;
+
+
+        //     // browser.close();
+        // }
+        // scrapeProduct('https://en.wikipedia.org/wiki/Marilyn_Monroe');
+</script>
+
+    </body>
+
+   </html>
