@@ -1,22 +1,50 @@
 <!doctype html>
 <html>
 <head>
-<link rel="stylesheet" href="main.css">
+    <link rel="stylesheet" href="main.css">
+<!--     <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+    <script>
+      $( function() {
+        $( "#collapsible" ).accordion();
+      } );
+  </script> -->
     
 </head>
 <body>
 
 <h1>Search For A Historical Feature:</h1>
-<h2>This is index.html page</h2>
 
      <form ><!-- id="search-figure"  method="post" action="/" -->
         <div>
-            <label>First Name<input type="text" name="fname" class ="fname"/></label>
-            <label>Last Name<input type="text" name="lname" class ="lname"/></label>
+            <label>First Name: <input type="text" name="fname" class ="fname"/></label>
+            <label>Last Name: <input type="text" name="lname" class ="lname"/></label>
 
-            <button type="button" onclick="scrapeProduct(fname,lname)" >Submit</button> <!-- onclick="scrapeProduct(fname, lname)" -->
+            <div class="collapsible">
+                <details>
+                <summary>View Advanced Search Options</summary>>
+                    <div>
+                        <input type="checkbox" id="timeline" name="timeline">
+                        <label for="timeline"> Is Already Added to Timeline</label><br>
+
+                        <select name="aliveDead" id="aliveDead">
+                            <option value="either">Either</option>
+                            <option value="alive">Alive</option>
+                            <option value="dead">Dead</option>
+                        </select>
+                        <br>
+
+                        <label>Year Born<input type="text" id="yearBorn" name="yearBorn"></label>
+                        <br>
+                    
+                    </div>
+                </details>
+            </div>
+            <button type="button" class="button" onclick="scrapeProduct(fname,lname)" >Submit</button> <!-- onclick="scrapeProduct(fname, lname)" -->
 
         </div>
+    </form>
+
 
 
 
@@ -27,10 +55,26 @@
         <p id="functest" ></p>
     </div>
 
+    <div>
+        <p id="person1" ></p>
+        <p onclick="test1()"  id="mm" ></p> 
+        <p onclick="test1()" id="person2" ></p>
+        <p id="person3" ></p>
+        <p id="person4" ></p>
+        <p id="person5" ></p>
+        <p id="person6" ></p>
+        <p id="person7" ></p>
+        <p id="person8" ></p>
+        <p id="person9" ></p>
+        <p id="person10" ></p>
+        <p id="person11" ></p>
+    </div>
+
         
         <script src="/scraper.js"></script>
         <script>
-        // const puppeteer = require('puppeteer');
+
+
 
         // function test(first, last){
     

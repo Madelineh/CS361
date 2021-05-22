@@ -21,6 +21,31 @@ a {
 	margin: 20px;
 }
 
+/*.collapsible {
+  background-color: #eee;
+  color: #444;
+  cursor: pointer;
+  padding: 18px;
+  width: 100%;
+  border: none;
+  text-align: left;
+  outline: none;
+  font-size: 15px;
+}*/
+
+/*Add a background color to the button if it is clicked on (add the .active class with JS), and when you move the mouse over it (hover) */
+/*.active, .collapsible:hover {
+  background-color: #ccc;
+}
+
+ Style the collapsible content. Note: hidden by default 
+.content {
+  padding: 0 18px;
+  display: none;
+  overflow: hidden;
+  background-color: #f1f1f1;
+}*/
+
 .a:hover {
 	background-color: white;
 	color: #116466
@@ -28,6 +53,12 @@ a {
 
 .nav_page{
 	background: #116466;
+}
+
+.advanced{
+	padding-top: 20px;
+	background: #add8e6;
+	font-size: 10;
 }
 
 .table_view{
@@ -41,7 +72,7 @@ a {
 	border-radius: 8px;
 	background-color: #116466;
 	color: white;
-	padding: 10px;
+	padding: 15px;
 	margin: 20px;
 }
 
