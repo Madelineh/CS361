@@ -19,23 +19,27 @@
         <div>
             <label>First Name: <input type="text" name="fname" class ="fname"/></label>
             <label>Last Name: <input type="text" name="lname" class ="lname"/></label>
+            <br><br>
+            <div class="discription">By searching for a person, it will return all people who are related to that person and all events related to that person</div>
 
             <div class="collapsible">
                 <details>
-                <summary>View Advanced Search Options</summary>>
+                <summary>View Advanced Search Options</summary>
                     <div>
                         <input type="checkbox" id="timeline" name="timeline">
-                        <label for="timeline"> Is Already Added to Timeline</label><br>
+                        <label for="timeline"> Is Already Added to Timeline</label>
+                        <br><br>
+                        <label>Alive or Dead</label>
+                        <select name="aliveDead" id="aliveDead"> 
 
-                        <select name="aliveDead" id="aliveDead">
                             <option value="either">Either</option>
                             <option value="alive">Alive</option>
                             <option value="dead">Dead</option>
                         </select>
-                        <br>
+                        <br><br>
 
                         <label>Year Born<input type="text" id="yearBorn" name="yearBorn"></label>
-                        <br>
+                        <br><br>
                     
                     </div>
                 </details>
