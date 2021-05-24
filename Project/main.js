@@ -1,4 +1,8 @@
 var express = require('express');
+// const cheerio = require('cheerio');
+// const axios = require('axios');
+// const puppeteer = require('puppeteer');
+// const scraper = require('./websearch');
 
 var app = express();
 var handlebars = require('express-handlebars').create({defaultLayout:'main'});
@@ -8,19 +12,24 @@ app.engine('handlebars', handlebars.engine);
 app.set('view engine', 'handlebars');
 app.set('port', 26450);
 
-
-
+// app.use(require('./routes/index'));
+// app.use(require('./routes/results'));
+app.use(express.static(__dirname + '/views'));
+app.use(express.static(__dirname + '/public'));
 
 //Routes
 
-app.use('/', require('./views/scraper.js'));
+// app.use('/', require('./views/scraper.js'));
 
-// app.get('/',function(req,res){
-//   res.render('home.handlebars'); 
-//   // require('./scraper.js');
-//   // require('./scraper.js')
-//   // res.render('index.html') 
-// });
+app.get('/',function(req,res){
+  // app.use(require('./routes/index'));
+  // app.use(require('./routes/results'));
+  res.render('home.handlebars'); 
+
+  // require('./scraper.js');
+  // require('view/scraper.js');
+  // res.render('index.html') 
+});
 
 // app.get('/search-figure',function(req,res){
 //   res.render('search-figure');
@@ -42,6 +51,6 @@ app.listen(app.get('port'), function(){
   console.log('Express started on http://flip3.engr.oregonstate.edu:' + app.get('port') + '; press Ctrl-C to terminate.');
 });
 
-const puppeteer = require('puppeteer');
+// const puppeteer = require('puppeteer');
 
  
