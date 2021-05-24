@@ -14,13 +14,19 @@
 <body>
 
 <h1>Search For A Historical Feature:</h1>
+<br><br>
+
 
      <form ><!-- id="search-figure"  method="post" action="/" -->
         <div>
             <label>First Name: <input type="text" name="fname" class ="fname"/></label>
             <label>Last Name: <input type="text" name="lname" class ="lname"/></label>
+            <div class="tooltip"> (i)
+                <span class="tooltiptext">Use search to show all people and events related to the person searched for</span>
+            </div>
+        </div>
             <br><br>
-            <div class="discription">By searching for a person, it will return all people who are related to that person and all events related to that person</div>
+
 
             <div class="collapsible">
                 <details>
@@ -44,7 +50,7 @@
                     </div>
                 </details>
             </div>
-            <button type="button" class="button" onclick="scrapeProduct(fname,lname)" >Submit</button> <!-- onclick="scrapeProduct(fname, lname)" -->
+            <button type="button" class="button" onclick="test2(fname,lname)" >Submit</button> <!-- onclick="scrapeProduct(fname, lname)" -->
 
         </div>
     </form>
@@ -57,12 +63,17 @@
         <p id="mm_bio" ></span>
         <p id="mm_contents" ></p>
         <p id="functest" ></p>
+        <p id="instructions"></p>
     </div>
 
-    <div>
+    <div class = "links">
+        
+        <p onclick="test4()"  id="wam" ></p> 
         <p id="person1" ></p>
         <p onclick="test1()"  id="mm" ></p> 
-        <p onclick="test1()" id="person2" ></p>
+        <p id="person2" ></p>
+        <p onclick="test5()"  id="jdm" ></p>
+        <p onclick="test3()"  id="gw" ></p>         
         <p id="person3" ></p>
         <p id="person4" ></p>
         <p id="person5" ></p>
