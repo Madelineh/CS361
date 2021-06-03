@@ -103,6 +103,12 @@ a {
 	margin: 20px;
 }
 
+.results {
+	border: solid;
+	background: #dddddd;
+	padding: 20px;
+}
+
 .row{
 	padding: 10px;
 }
@@ -115,9 +121,10 @@ a {
 
 }
 
-.filter_store {
-	position: absolute;
-	text-align: center;
+.advancedfeatures{
+	border: solid;
+	background: #dddddd;
+	padding: 20px;
 }
 
 /*Dropdown filter menu*/

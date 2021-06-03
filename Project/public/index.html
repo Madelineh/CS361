@@ -2,13 +2,7 @@
 <html>
 <head>
     <link rel="stylesheet" href="main.css">
-<!--     <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
-    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
-    <script>
-      $( function() {
-        $( "#collapsible" ).accordion();
-      } );
-  </script> -->
+
     
 </head>
 <body>
@@ -17,7 +11,7 @@
 <br><br>
 
 
-     <form ><!-- id="search-figure"  method="post" action="/" -->
+     <form >
         <div>
             <label>First Name: <input type="text" name="fname" class ="fname"/></label>
             <label>Last Name: <input type="text" name="lname" class ="lname"/></label>
@@ -31,7 +25,7 @@
             <div class="collapsible">
                 <details>
                 <summary>View Advanced Search Options</summary>
-                    <div>
+                    <div class="advancedfeatures">
                         <input type="checkbox" id="timeline" name="timeline">
                         <label for="timeline"> Is Already Added to Timeline</label>
                         <br><br>
@@ -50,7 +44,7 @@
                     </div>
                 </details>
             </div>
-            <button type="button" class="button" onclick="test2(fname,lname)" >Submit</button> <!-- onclick="scrapeProduct(fname, lname)" -->
+            <button type="button" class="button" onclick="test2(fname,lname)">Submit</button> 
 
         </div>
     </form>
@@ -59,76 +53,127 @@
 
 
     <div class="results">
-        <p id="mm_image"></p>
-        <p id="mm_bio" ></span>
-        <p id="mm_contents" ></p>
-        <p id="functest" ></p>
-        <p id="instructions"></p>
-    </div>
+        <div class="results2">
+            <p id="mm_image"></p>
+            <p id="mm_bio" ></span>
+            <p id="mm_contents" ></p>
+            <p id="functest" ></p>
 
-    <div class = "links">
-        
-        <p onclick="test4()"  id="wam" ></p> 
-        <p id="person1" ></p>
-        <p onclick="test1()"  id="mm" ></p> 
-        <p id="person2" ></p>
-        <p onclick="test5()"  id="jdm" ></p>
-        <p onclick="test3()"  id="gw" ></p>         
-        <p id="person3" ></p>
-        <p id="person4" ></p>
-        <p id="person5" ></p>
-        <p id="person6" ></p>
-        <p id="person7" ></p>
-        <p id="person8" ></p>
-        <p id="person9" ></p>
-        <p id="person10" ></p>
-        <p id="person11" ></p>
+            <p id="instructions"></p>   
+            <p id="born_date" ></p>
+            <p id="born_place" ></p>
+        </div>
+
+        <div class = "links">
+            
+            <p onclick="test4()"  id="wam" ></p> 
+            <p id="person1" ></p>
+            <p onclick="test1()"  id="mm" ></p> 
+            <p id="person2" ></p>
+            <p onclick="test5()"  id="jdm" ></p>
+            <p onclick="test3()"  id="gw" ></p>         
+            <p id="person3" ></p>
+            <p id="person4" ></p>
+            <p id="person5" ></p>
+            <p id="person6" ></p>
+            <p id="person7" ></p>
+            <p id="person8" ></p>
+            <p id="person9" ></p>
+            <p id="person10" ></p>
+            <p id="person11" ></p>
+        </div>
     </div>
 
         
         <script src="/scraper.js"></script>
         <script>
+            function test2(first, last){
+
+    document.getElementById("mm_bio").innerHTML="";
+
+    if (first.value === "Marilyn"){
+        if (aliveDead.value === "alive"){
+                    document.getElementById("person1").innerHTML="Shot Marilyns";
+                    document.getElementById("person3").innerHTML="Marilyn Manson";
+        document.getElementById("person4").innerHTML="Marilyn Manson (band)";
+        document.getElementById("person5").innerHTML="Mary Lynne (song)";
+        } else{
+
+
+                document.getElementById("instructions").innerHTML="Select The Person To Search";
+
+        document.getElementById("person1").innerHTML="Shot Marilyns";
+        document.getElementById("person2").innerHTML="Marilyn Diptych";
+        document.getElementById("person3").innerHTML="Marilyn Manson";
+        document.getElementById("person4").innerHTML="Marilyn Manson (band)";
+        document.getElementById("person5").innerHTML="Mary Lynne (song)";
+
+        document.getElementById("mm").innerHTML="Marilyn Monroe";
+        }
+
+
+    } else if (last.value === "Washington"){
+        document.getElementById("instructions").innerHTML="Select The Person To Search"
+
+        document.getElementById("person1").innerHTML="Washington (state)";
+        document.getElementById("person2").innerHTML="Washington, D.C.";
+
+
+        document.getElementById("gw").innerHTML="George Washington";
+
+    } else{
 
 
 
-        // function test(first, last){
+        document.getElementById("wam").innerHTML="Wolfgang Amadeus Mozart";
+    }
+
+};
+
+
+function test1(){
+
+    document.getElementById("mm_bio").innerHTML="Marilyn Monroe (/ˈmærɪlɪn mənˈroʊ/; born Norma Jeane Mortenson; June 1, 1926 – August 4, 1962) was an American actress, model, and singer. Famous for playing comedic 'blonde bombshell' characters, she became one of the most popular sex symbols of the 1950s and early 1960s and was emblematic of the era's sexual revolution. She was a top-billed actress for only a decade, but her films grossed $200 million (equivalent to $2 billion in 2019) by the time of her death in 1962.[1] Long after her death, she continues to be a major icon of pop culture.[2] In 1999, the American Film Institute ranked Monroe sixth on its list of the greatest female screen legends from the Golden Age of Hollywood.";
     
-        //     document.getElementById("functest").innerHTML="It works, " + first + last;
-        // }
+    document.getElementById("instructions").innerHTML="";
+            document.getElementById("born_date").innerHTML="Date Born: June 1, 1926";
+        document.getElementById("born_place").innerHTML="Location Born: Los Angeles, CA";
+            document.getElementById("person1").innerHTML="Norma Jeane Baker";
+        document.getElementById("person2").innerHTML="James Dougherty";
+        document.getElementById("jdm").innerHTML="Joe DiMaggio";
+        document.getElementById("person4").innerHTML="Arthur Miller";
+        document.getElementById("person5").innerHTML="Gladys Pearl Baker";
+        document.getElementById("mm").innerHTML="";
 
-        // function scrapeProduct(first, last){
-        //     const puppeteer = require('puppeteer');
+};
 
-        //     const browser = await puppeteer.launch();
-        //     const page = await browser.newPage();
-        //     const url = "https://en.wikipedia.org/wiki/Mark_Selby" + first + "_" + last;
-        //     await page.goto(url);
+function test3(){
 
-        //     const [el] = await page.$x('//*[@id="mw-content-text"]/div[1]/table/tbody/tr[2]/td/a/img');
-        //     const src = await el.getProperty('src');
-        //     const srcTxt = await src.jsonValue();
+    document.getElementById("mm_bio").innerHTML="George Washington (February 22, 1732[b] – December 14, 1799) was an American political leader, military general, statesman, and Founding Father who served as the first president of the United States from 1789 to 1797. Previously, he led Patriot forces to victory in the nation's War for Independence. He presided at the Constitutional Convention of 1787, which established the U.S. Constitution and a federal government. Washington has been called the Father of His Country for his manifold leadership in the formative days of the new nation.";
+    document.getElementById("instructions").innerHTML="";
+            document.getElementById("born_date").innerHTML="Date Born:  February 22, 1732";
+        document.getElementById("born_place").innerHTML="Location Born: Popes Creek, Virginia";
+    document.getElementById("person1").innerHTML="John Adams";
+        document.getElementById("person2").innerHTML="James Wilkinson";
+        document.getElementById("person3").innerHTML="Alexander Hamilton";
+        document.getElementById("person4").innerHTML="Henry Knox";
+        document.getElementById("gw").innerHTML="James Madison";
 
-        //     const [el2] = await page.$x('//*[@id="mw-content-text"]/div[1]/p[3]');
-        //     const txt = await el2.getProperty('textContent');
-        //     const rawTxt = await txt.jsonValue();
+};
 
-        //     const [el3] = await page.$x('//*[@id="toc"]/ul');
-        //     const txt2 = await el3.getProperty('textContent');
-        //     const contents = await txt2.jsonValue();
+function test5(){
 
-        //     var test="This works!";
+    document.getElementById("mm_bio").innerHTML="Joseph Paul DiMaggio[a] (November 25, 1914 – March 8, 1999), nicknamed Joltin' Joe and The Yankee Clipper, was an American baseball center fielder who played his entire 13-year career in Major League Baseball for the New York Yankees. Born to Sicilian Italian immigrants in California, he is widely considered one of the greatest baseball players of all time, and had a 56-game hitting streak (May 15 – July 16, 1941), a record that still stands.";
+    document.getElementById("instructions").innerHTML="";
+    document.getElementById("person1").innerHTML="Yogi Berra";
+        document.getElementById("person2").innerHTML="Marilyn Monroe";
+        document.getElementById("person3").innerHTML="Giuseppe DiMaggio";
+        document.getElementById("person4").innerHTML="Rosalia DiMaggio";
+        document.getElementById("gw").innerHTML="Saint Paul";
 
-        //     // console.log({srcTxt, rawTxt, contents});
-        //     document.getElementById("mm_image").innerHTML=srcTxt;
-        //     document.getElementById("mm_bio").innerHTML=rawTxt;
-        //     document.getElementById("mm_contents").innerHTML=contents;
-
-        //     document.getElementById("functest").innerHTML=test;
+};
 
 
-        //     // browser.close();
-        // }
-        // scrapeProduct('https://en.wikipedia.org/wiki/Marilyn_Monroe');
 </script>
 
     </body>
